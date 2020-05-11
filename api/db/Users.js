@@ -5,7 +5,7 @@ function getAll(table) {
 }
 
 function findBy(col, value) {
-    return db("users").where(value, col);
+    return db("users").where(col, value);
 }
 
 function findById(id) {
