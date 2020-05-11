@@ -1,4 +1,3 @@
-const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Users = require("../db/Users");
 
@@ -13,11 +12,11 @@ module.exports = (req, res, next) => {
             if (!err) {
                 req.decodedToken = decodedToken;
                 return next();
+            } else {
+                res.status(401).json({ message: "You shall not pass!" });
             }
         });
-    }
-    else {
+    } else {
         res.status(401).json({ message: "You shall not pass!" });
     }
-
 };

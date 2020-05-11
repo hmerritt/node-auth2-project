@@ -3,7 +3,7 @@ const Users = require("../db/Users");
 
 const router = express.Router();
 
-router.get("/", async (req, res, next) => {
+router.get("/", (req, res, next) => {
     //
     Users.getAll("users")
         .then((dbUsers) => {
